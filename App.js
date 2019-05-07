@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppLoading, Font, Asset } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet, Text, View } from 'react-native';
+import TabNavigation from "./navigation/TabNavigation";
 
 export default class App extends React.Component {
 
@@ -24,9 +24,7 @@ export default class App extends React.Component {
     const { loaded } = this.state;
     if(loaded) {
       return (
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-        </View>
+          <TabNavigation />
       );
     } else {
       return <AppLoading startAsync={this.loadAssets} onFinish={this.handleLoaded} onError={this.handleError} />
@@ -34,11 +32,4 @@ export default class App extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
